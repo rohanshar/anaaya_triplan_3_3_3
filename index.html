@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriPlan 3-3-3 - Smart After-School Planner</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4F46E5;
+            --secondary-color: #F59E0B;
+            --success-color: #10B981;
+            --danger-color: #EF4444;
+            --dark-color: #1F2937;
+        }
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2122&q=80') center/cover;
+            opacity: 0.1;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .problem-section {
+            background: linear-gradient(45deg, #FEF3E2 0%, #FDE68A 100%);
+        }
+        
+        .solution-section {
+            background: linear-gradient(45deg, #DBEAFE 0%, #BFDBFE 100%);
+        }
+        
+        .demo-section {
+            background: linear-gradient(45deg, #F3E8FF 0%, #DDD6FE 100%);
+        }
+        
+        .unique-section {
+            background: linear-gradient(45deg, #ECFDF5 0%, #BBF7D0 100%);
+        }
+        
+        .ask-section {
+            background: linear-gradient(135deg, var(--danger-color) 0%, #F97316 100%);
+            color: white;
+        }
+        
+        .triangle-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: none;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .btn-custom {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: 50px;
+            padding: 15px 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+        }
+        
+        .display-1 {
+            font-weight: 700;
+        }
+        
+        .triangle-demo {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #4F46E5, #F59E0B, #EF4444);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translatey(0px); }
+            50% { transform: translatey(-20px); }
+            100% { transform: translatey(0px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section / Slide 1 -->
+    <section class="hero-section text-white">
+        <div class="container text-center position-relative">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div data-aos="fade-up" data-aos-duration="1000">
+                        <i class="fas fa-play triangle-icon floating mb-4"></i>
+                        <h1 class="display-1 mb-4">TriPlan 3-3-3</h1>
+                        <h2 class="h3 mb-4">A Smart After-School Planner for Kids</h2>
+                        <p class="lead mb-5">Presented by: Class 7 Student</p>
+                        <a href="#problem" class="btn btn-light btn-custom">
+                            <i class="fas fa-arrow-down me-2"></i>Discover More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section / Slide 2 -->
+    <section id="problem" class="problem-section section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Confused student" class="img-fluid rounded-4 shadow-lg">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="ps-lg-5">
+                        <h2 class="display-4 text-danger mb-4">
+                            <i class="fas fa-exclamation-triangle me-3"></i>The Problem
+                        </h2>
+                        <div class="feature-card">
+                            <p class="h5 text-dark">
+                                "After school, kids often waste time or get confused. We forget homework, 
+                                skip play, or watch too much screen."
+                            </p>
+                            <div class="mt-4">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-times text-danger me-3"></i>
+                                    <span>Forgetting homework and important tasks</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-times text-danger me-3"></i>
+                                    <span>Too much screen time, not enough play</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times text-danger me-3"></i>
+                                    <span>Confusion about what to do next</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section / Slide 3 -->
+    <section class="solution-section section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80" 
+                         alt="Happy organized student" class="img-fluid rounded-4 shadow-lg">
+                </div>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                    <div class="pe-lg-5">
+                        <h2 class="display-4 text-primary mb-4">
+                            <i class="fas fa-lightbulb me-3"></i>The Solution
+                        </h2>
+                        <div class="feature-card">
+                            <p class="h5 text-dark mb-4">
+                                "TriPlan 3-3-3 is a triangle-shaped planner that helps us organize 
+                                after-school time into 3 easy parts:"
+                            </p>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center p-3 bg-primary text-white rounded-3">
+                                        <i class="fas fa-tasks me-3 fs-4"></i>
+                                        <span class="fw-bold">3 'Must Do' tasks</span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center p-3 bg-warning text-dark rounded-3">
+                                        <i class="fas fa-heart me-3 fs-4"></i>
+                                        <span class="fw-bold">3 fun 'Want to Do' joys</span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center p-3 bg-danger text-white rounded-3">
+                                        <i class="fas fa-running me-3 fs-4"></i>
+                                        <span class="fw-bold">3 'Move Time' activities to stay active!</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section / Slide 4 -->
+    <section class="demo-section section-padding">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-4 text-primary mb-4">
+                    <i class="fas fa-cube me-3"></i>Product Demo
+                </h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="zoom-in">
+                    <div class="triangle-demo floating mx-auto">
+                        <div class="text-white text-center">
+                            <i class="fas fa-play fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="ps-lg-5">
+                        <div class="feature-card">
+                            <h3 class="h4 mb-4">How Each Side Works:</h3>
+                            <div class="mb-3">
+                                <div class="d-flex align-items-start">
+                                    <div class="badge bg-primary rounded-pill me-3 mt-1">1</div>
+                                    <div>
+                                        <strong>Blue Face:</strong> Write your 3 most important homework and chores
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex align-items-start">
+                                    <div class="badge bg-warning rounded-pill me-3 mt-1">2</div>
+                                    <div>
+                                        <strong>Yellow Face:</strong> Plan 3 fun activities you want to enjoy
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex align-items-start">
+                                    <div class="badge bg-danger rounded-pill me-3 mt-1">3</div>
+                                    <div>
+                                        <strong>Red Face:</strong> Schedule 3 physical activities to stay healthy
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-light p-3 rounded-3">
+                                <i class="fas fa-leaf text-success me-2"></i>
+                                <strong>Materials:</strong> Eco-friendly cardboard, DIY-friendly, and fun to make!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Features Section / Slide 5 -->
+    <section class="unique-section section-padding">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-4 text-success mb-4">
+                    <i class="fas fa-star me-3"></i>Why It's Unique
+                </h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card text-center h-100">
+                        <i class="fas fa-brain text-primary fs-1 mb-3"></i>
+                        <h4>Helps Focus</h4>
+                        <p>Keeps kids focused and happy with clear daily structure</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card text-center h-100">
+                        <i class="fas fa-clock text-warning fs-1 mb-3"></i>
+                        <h4>Teaches Planning</h4>
+                        <p>Develops time management and life balance skills</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card text-center h-100">
+                        <i class="fas fa-mobile-alt text-danger fs-1 mb-3"></i>
+                        <h4>No Screens</h4>
+                        <p>Zero screens or apps needed - pure hands-on experience</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card text-center h-100">
+                        <i class="fas fa-recycle text-success fs-1 mb-3"></i>
+                        <h4>Reusable Daily</h4>
+                        <p>Use it every single day with new tasks and activities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ask Section / Slide 6 -->
+    <section class="ask-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="zoom-in">
+                    <i class="fas fa-handshake fs-1 mb-4"></i>
+                    <h2 class="display-4 mb-4">Ask to the Sharks</h2>
+                    <div class="bg-white bg-opacity-10 p-5 rounded-4 backdrop-filter">
+                        <p class="h4 mb-4">
+                            "I'm asking for support to bring TriPlan 3-3-3 to every student's desk. 
+                            Together, we can help kids take charge of their time, their joy, and their health!"
+                        </p>
+                        <div class="row g-3 mt-4">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <i class="fas fa-clock me-2"></i>
+                                    <span>Better Time Management</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <i class="fas fa-smile me-2"></i>
+                                    <span>More Joy & Fun</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <i class="fas fa-heart me-2"></i>
+                                    <span>Healthier Kids</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-light btn-lg mt-4 btn-custom">
+                            <i class="fas fa-rocket me-2"></i>Let's Make It Happen!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">
+                <i class="fas fa-graduation-cap me-2"></i>
+                TriPlan 3-3-3 - Empowering Kids to Plan Better
+            </p>
+            <small class="text-muted">Made with ❤️ for Class 7 Presentation</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
